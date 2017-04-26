@@ -19,4 +19,13 @@ public class FigureFactory {
         return new ComplexCommand(commands);
     }
 
+    public static PlotterCommand drawRightTriangle(int startX, int startY, int firstCathetus, int secondCathetus) {
+        List<PlotterCommand> commands = new ArrayList<>();
+        commands.add(new CommandSetPosition(startX, startY));
+        commands.add(new CommandDrawLineToPosition(startX, startY + firstCathetus));
+        commands.add(new CommandDrawLineToPosition(startX + secondCathetus, startY));
+        commands.add(new CommandDrawLineToPosition(startX , startY));
+        return new ComplexCommand(commands);
+    }
+
 }
